@@ -1,16 +1,23 @@
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 
-# delaunator1
+# delaunator
 
 <!-- badges: start -->
 <!-- badges: end -->
 
-The goal of delaunator1 is to …
+The goal of delaunator is to triangulate point sets fast.
+
+We have only wrapped this library for use in R:
+<https://github.com/abellgithub/delaunator-cpp>
+
+WIP: An old benchmark to use for comparison:
+
+<https://rpubs.com/cyclemumner/416456>
 
 ## Installation
 
-You can install the development version of delaunator1 like so:
+You can install the development version of delaunator like so:
 
 ``` r
 # FILL THIS IN! HOW CAN PEOPLE INSTALL YOUR DEV PACKAGE?
@@ -18,24 +25,36 @@ You can install the development version of delaunator1 like so:
 
 ## Example
 
-This is a basic example which shows you how to solve a common problem:
-
 ``` r
-library(delaunator1)
-delaunator1:::delaunator1(matrix(rnorm(6), ncol = 2))
-#> [1] 1 0 2
+library(delaunator)
+delaunator_triangulate(matrix(runif(6), ncol = 2))
+#>      [,1] [,2] [,3]
+#> [1,]    1    3    2
 ```
 
-If you are following along this is unstable and will change, but here’s
-how the elements are oriented (for now).
+``` r
+
+delaunator_triangulate(cbind(1:4, runif(4)))
+#>      [,1] [,2] [,3]
+#> [1,]    2    3    1
+#> [2,]    2    4    3
+```
+
+In the R level we sort out the orientation of inputs and outputs, and
+return a matrix of triangle triplets as rows (1-based).
 
 ``` r
 xy <- matrix(rnorm(1024), ncol = 2)
-#xy <- do.call(cbind, maps::map(plot = TRUE)[1:2])
-## transpose in, for now
-i <- delaunator1:::delaunator1(t(xy)) + 1
+i <- delaunator_triangulate(xy)
 plot(xy, asp = 1)
-polygon(xy[t(cbind(matrix(i, ncol = 3, byrow = TRUE), NA)), ])
+polygon(xy[t(cbind(i, NA)), ])
 ```
 
 <img src="man/figures/README-orientation-1.png" width="100%" />
+
+## Code of Conduct
+
+Please note that the delaunator project is released with a [Contributor
+Code of
+Conduct](https://contributor-covenant.org/version/2/1/CODE_OF_CONDUCT.html).
+By contributing to this project, you agree to abide by its terms.
