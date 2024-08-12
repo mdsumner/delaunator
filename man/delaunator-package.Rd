@@ -4,7 +4,7 @@
 \name{delaunator-package}
 \alias{delaunator}
 \alias{delaunator-package}
-\title{delaunator: R Port of C++ 'delaunator'}
+\title{delaunator: R Wrapper of C++ 'delaunator'}
 \description{
 Provides fast Delaunay triangulation of xy point sets, using the 'delaunator' header library available at \url{https://github.com/abellgithub/delaunator-cpp}.
 

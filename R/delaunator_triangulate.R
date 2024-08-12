@@ -8,6 +8,7 @@
 #' @return matrix of triplet indices, one triangle per row
 #' @export
 #'
+#' @importFrom grDevices xy.coords
 #' @examples
 #' idx <- delaunator_triangulate(xy <- cbind(1:100, rnorm(100)))
 #' plot(xy, pch = "+", cex = 2, col = "firebrick")

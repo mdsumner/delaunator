@@ -5,7 +5,7 @@
 #include "cpp11/declarations.hpp"
 #include <R_ext/Visibility.h>
 
-// triangulate_example.cpp
+// delaunator_triangulate.cpp
 integers delaunator_triangulate_cpp(std::vector<double> coords);
 extern "C" SEXP _delaunator_delaunator_triangulate_cpp(SEXP coords) {
   BEGIN_CPP11

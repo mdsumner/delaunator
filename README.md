@@ -20,7 +20,8 @@ WIP: An old benchmark to use for comparison:
 You can install the development version of delaunator like so:
 
 ``` r
-# FILL THIS IN! HOW CAN PEOPLE INSTALL YOUR DEV PACKAGE?
+#install.packages("remotes")
+remotes::install_github("mdsumner/delaunator")
 ```
 
 ## Example
@@ -29,15 +30,16 @@ You can install the development version of delaunator like so:
 library(delaunator)
 delaunator_triangulate(matrix(runif(6), ncol = 2))
 #>      [,1] [,2] [,3]
-#> [1,]    1    3    2
+#> [1,]    1    2    3
 ```
 
 ``` r
 
 delaunator_triangulate(cbind(1:4, runif(4)))
 #>      [,1] [,2] [,3]
-#> [1,]    2    3    1
-#> [2,]    2    4    3
+#> [1,]    3    1    4
+#> [2,]    4    2    3
+#> [3,]    3    2    1
 ```
 
 In the R level we sort out the orientation of inputs and outputs, and

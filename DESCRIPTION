@@ -1,12 +1,11 @@
 Package: delaunator
-Title: R Port of C++ 'delaunator'
-Version: 0.0.0.9000
+Title: R Wrapper of C++ 'delaunator'
+Version: 0.0.1
 Authors@R: 
    c(
     person("Michael", "Sumner", , "mdsumner@gmail.com", role = c("aut", "cre")), 
     person("Vladi", "Bilonenko", role = "cph"))
-Description: Provides fast Delaunay triangulation of xy point sets, 
- using the 'delaunator' header library available at <https://github.com/abellgithub/delaunator-cpp>.
+Description: Provides fast Delaunay triangulation of xy point sets, using the 'delaunator' header library available at <https://github.com/abellgithub/delaunator-cpp>.
 License: MIT + file LICENSE
 Encoding: UTF-8
 Roxygen: list(markdown = TRUE)
@@ -15,3 +14,5 @@ LinkingTo:
     cpp11
 URL: https://github.com/abellgithub/delaunator-cpp, https://github.com/mdsumner/delaunator1
 BugReports: https://github.com/mdsumner/delaunator1/issues
+Imports: 
+    grDevices

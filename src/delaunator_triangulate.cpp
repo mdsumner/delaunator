@@ -5,7 +5,7 @@ using namespace cpp11;
 namespace writable = cpp11::writable;
 
 
-#include "delaunator.hpp"
+#include "delaunator.hpp.cpp"
 
 
 [[cpp11::register]]

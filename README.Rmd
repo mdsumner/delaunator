@@ -35,7 +35,8 @@ https://rpubs.com/cyclemumner/416456
 You can install the development version of delaunator like so:
 
 ``` r
-# FILL THIS IN! HOW CAN PEOPLE INSTALL YOUR DEV PACKAGE?
+#install.packages("remotes")
+remotes::install_github("mdsumner/delaunator")
 ```
 
 ## Example
@@ -61,6 +62,10 @@ polygon(xy[t(cbind(i, NA)), ])
 
 ```
 
+
+## No constrained triangulation here
+
+If you're looking for constrained, conformant, or quality-of-mesh-controllable triangulation you won't find it here. These features are in RTriangle on CRAN, and there is some exposure of the CGAL library in R, and a functional version using RTriangle for some spatial data formats is in hypertidy/anglr. 
 
 ## Code of Conduct
   
